@@ -1,0 +1,15 @@
+backend:
+  name: github
+  branch: main # Branch to update (optional; defaults to master)
+
+local_backend: true
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: projects
+    label: projects
+    folder: src/projects
+    fields:
+      - {label: "Title", name: "project-title", widget: "string"}
