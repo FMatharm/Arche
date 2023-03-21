@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: FMatharm/Arche
-  branch: main # Branch to update (optional; defaults to master)
+  branch: master # Branch to update (optional; defaults to master)
 
 local_backend: true
 
@@ -9,10 +9,11 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: projects
-    label: Projects
+  - name: project
+    label: Project
     folder: src/projects
     create: true
+    slug: "{{project-title}}-{{year}}"
     fields:
       - {label: "Title", name: "project-title", widget: "string"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
