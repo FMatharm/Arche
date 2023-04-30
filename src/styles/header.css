@@ -1,0 +1,157 @@
+/* HEADER STYLES */
+#navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    z-index: 100;
+    height: 116px;
+    position: fixed;
+    top: 0;
+    transition: all 0.5s ease;
+}
+
+/* HERONAV */
+.heronav {
+    background-color: #212121;
+}
+
+#navbar.heronav #letter {
+    color: #F2CD5C;
+}
+
+#navbar.heronav .subtitle {
+    color: white;
+}
+
+#navbar.heronav #links a {
+    color: white;
+}
+
+#navbar.heronav #links a:hover {
+    color: #00bbba;
+}
+
+#navbar.heronav #res-button i {
+    background-color: white;
+}
+
+/* ABOUTNAV */
+.aboutnav {
+    background-color: #00bbba;
+}
+
+#navbar.aboutnav #letter {
+    color: white;
+}
+
+#navbar.aboutnav .subtitle {
+    color: white;
+}
+
+#navbar.aboutnav #links a {
+    color: black;
+}
+
+#navbar.aboutnav #links a:hover {
+    color: #E4C988;
+}
+
+#navbar.aboutnav #res-button i {
+    background-color: black;
+}
+
+/* LOGO AND LINKS */
+#logo {
+    min-width: 100px;
+    font-family: 'Playfair Display', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#letter {
+    font-size: 42px;
+}
+
+.subtitle {
+    font-size: 12px;
+}
+
+#links {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    padding-right: 100px;
+}
+
+#links a {
+    font-family: 'Saira Semi Condensed';
+    font-size: 14px;
+    margin: 0 12px;
+    padding: 6px;
+}
+
+#res_button {
+    display: none;
+}
+
+/* MENU STYLES */
+#menu {
+    position: fixed;
+    width: 100%;
+    height: calc(100vh - 116px);
+    background-color: #212121;
+    z-index: 100;
+    transform: translateX(-100%);
+    top: 116px;
+}
+
+#menu-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#menu-links a {
+    font-family: 'Saira Semi Condensed';
+    font-size: 18px;
+    margin: 12px 0;
+    padding: 6px;
+    color: white;
+}
+
+#menu-links a:hover {
+    color: #00bbba;
+}
+
+@media only screen and (max-width: 601px) {
+    /* HEADER STYLES */
+    #navbar {
+        justify-content: space-between
+    }
+
+    #links {
+        display: none;
+    }
+
+    #res-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        padding: 5px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    #res-button i {
+        display: block;
+        height: 2px;
+        width: 40px;
+        margin: 5px 0;
+    }
+}

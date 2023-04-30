@@ -1,13 +1,23 @@
 import React from 'react'
 
+function objectIsEmpty (obj) {
+    return Object.values(obj).every(val => val === null || val === '')
+}
+
 function ProjectPreview({entry, getAsset}) {
-    const data = entry.getIn(["data"]).toJS();
+    const data = entry.getIn(["data"]).toJS()
     
-    if (data) {
-        return <div>Theres something here</div>
+    if (!objectIsEmpty(data)) {
+        const image = getAsset(data.thumbnail)
+        return (
+            <div id='card-preview'>
+                <h1>{data.title}</h1>
+                <img src={image} alt={data.title + " project preview"}/>
+            </div>
+        );
     } else {
-        return <div>Loading...</div>
+        return <div id='empty-preview'>Emptiness...</div>
     }
 }
 
-export default ProjectPreview;
+export default ProjectPreview

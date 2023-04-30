@@ -10,6 +10,13 @@
 module.exports = {
   plugins: [
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: `${__dirname}/src/projects`
+      }
+    },
+    {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
         /**

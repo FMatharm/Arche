@@ -15,6 +15,7 @@ collections:
     create: true
     slug: "{{project-title}}-{{year}}"
     fields:
-      - {label: "Title", name: "project-title", widget: "string"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Title", name: "title", widget: "string", default: "Project Title"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image", default: "../img/placeholder.webp"}
+      - {label: "Description", name: "description", widget: "text"}
       - {label: "URL", name: "link", widget: "string"}

@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed&display=swap');
+@import url(./header.css);
+@import url(./hero.css);
+@import url(./aboutwork.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ANIMATIONS */
+@keyframes typewriterDesk{
+  from{width: 0;}
+  to{width: 315px;}
+}
+
+@keyframes typewriterMob{
+    from{width: 0;}
+    to{width: 254px;}
+  }
+  
+
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}

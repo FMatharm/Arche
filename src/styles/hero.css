@@ -1,0 +1,109 @@
+/* HERO STYLES */
+#hero {
+    height: 100vh;
+    width: 100%;
+    background-color: #212121;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 116px;
+}
+
+#hero-content {
+    display: grid;
+    width: 100%;
+    height: 360px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    margin: 0 20px;
+    user-select: none;
+}
+
+#hero-icon {
+    background-image: url('../../static/img/hero_icon.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+}
+
+#hero-desc {
+    font-family: 'Playfair Display', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#hero-desc h1 {
+    color: #F2CD5C;
+    font-size: 52px;
+    font-weight: 100;
+    margin: 0;
+    border-right: 2px solid rgba(255,255,255,.75);
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#hero-desc h2 {
+    color: white;
+    font-weight: 100;
+    font-size: 24px;
+}
+
+/* WAVES */
+#waves {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+}
+
+.wave {
+    background-image: url(../../static/img/wave.png);
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-size: 1000px 100px;
+}
+
+/* DESKTOP MEDIA QUERY */
+@media only screen and (min-width: 602px) {
+    .anim-typewriter {
+        animation:  typewriterDesk 1.5s steps(44) 500ms 1 normal both,
+                    blinkTextCursor 0.5s steps(44) infinite normal;
+    }
+}
+
+/* MOBILE MEDIA QUERY */
+@media only screen and (max-width: 601px) {
+    /* HERO STYLES   */
+    #hero-content {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    #hero-desc {
+        grid-row: 2/3;
+    }
+
+    #hero-icon {
+        grid-row: 1/2;
+    }
+
+    #hero-desc h1 {
+        font-size: 42px;
+    }
+
+    #hero-desc h2 {
+        font-size: 18px;
+    }
+
+    .anim-typewriter {
+        animation:  typewriterMob 1.5s steps(44) 500ms 1 normal both,
+                    blinkTextCursor 0.5s steps(44) infinite normal;
+    }
+}
