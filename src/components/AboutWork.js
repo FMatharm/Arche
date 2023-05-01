@@ -7,6 +7,7 @@ import { SiSpring } from "@react-icons/all-files/si/SiSpring"
 import { SiGatsby } from "@react-icons/all-files/si/SiGatsby"
 import { useEffect } from 'react'
 import { gsap } from 'gsap'
+import Gallery from './animated/Gallery'
 
 export default function AboutWork() {
     useEffect(() => {
@@ -37,7 +38,7 @@ export default function AboutWork() {
         <section id="home-about">
             <div>
                 <div id="project-display">
-                    
+                    <Gallery />
                 </div>
                 <div id="introduction">
                     <h2>EAGER TO WORK</h2>

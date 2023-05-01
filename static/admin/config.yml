@@ -13,7 +13,7 @@ collections:
     label: Project
     folder: src/projects
     create: true
-    slug: "{{project-title}}-{{year}}"
+    slug: "{{title}}-{{year}}"
     fields:
       - {label: "Title", name: "title", widget: "string", default: "Project Title", pattern: ['^.{0,29}$', "Must be 29 characters maximum"]}
       - {label: "Featured Image", name: "thumbnail", widget: "image", default: "../img/placeholder.webp"}
