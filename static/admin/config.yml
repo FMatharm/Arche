@@ -15,7 +15,7 @@ collections:
     create: true
     slug: "{{project-title}}-{{year}}"
     fields:
-      - {label: "Title", name: "title", widget: "string", default: "Project Title", pattern: ['^.{0,35}$', "Must be 35 characters maximum"]}
+      - {label: "Title", name: "title", widget: "string", default: "Project Title", pattern: ['^.{0,29}$', "Must be 29 characters maximum"]}
       - {label: "Featured Image", name: "thumbnail", widget: "image", default: "../img/placeholder.webp"}
       - {label: "Description", name: "description", widget: "text", pattern: ['^.{0,150}$', "Must be 150 characters maximum"]}
       - {label: "URL", name: "link", widget: "string", pattern: ['^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$', "Must be a valid URL"]}
