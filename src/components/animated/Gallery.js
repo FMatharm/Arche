@@ -1,10 +1,15 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
-function getFourLatest(data) {
+function getThreeLatest(data) {
     let idArray = data.allFile.nodes.map(obj => (obj.id))
     let projectArray = idArray.map(id => {
-        return data.allMarkdownRemark.nodes.find(obj => (obj.parent.id === id)).frontmatter
+        let project = data.allMarkdownRemark.nodes.find(obj => (obj.parent.id === id)).frontmatter
+        let projectImageName = project.thumbnail.match(/[A-z]+\.(png|webp|jpg|jpeg|tif|tiff)$/)[0]
+        let imageData = data.allImageSharp.nodes.find(obj => (obj.parent.base === projectImageName))
+        project.imageData = imageData
+        return project
     })
     return projectArray
 }
@@ -27,15 +32,42 @@ export default function Gallery() {
             }
           }
         }
-        allFile(sort: {fields: birthTime, order: DESC}, limit: 4) {
+        allFile(
+          sort: {fields: birthTime, order: DESC}
+          limit: 3
+          filter: {extension: {eq: "md"}}
+        ) {
           nodes {
             id
           }
         }
-      }
+        allImageSharp {
+          nodes {
+            gatsbyImageData(width: 360, height: 240)
+            parent {
+              ... on File {
+                base
+              }
+            }
+          }
+        }
+      } 
     `)
-    const projects = getFourLatest(data)
+    const projects = getThreeLatest(data)
     return (
-        <div>{projects.map((el, index) => (<span key={index}>{el.description}</span>))}</div>
+        <div id="gallery-wrapper">
+            {projects.map((project, index) => (
+                <a key={index} className='gallery-panel' id={`panel${index}`} href={project.link} target='_blank' rel='noreferrer'>
+                    <div className='shadow-panel'>
+                        <h3>{project.title}</h3>
+                        <p>{project.description}</p>
+                    </div> 
+                    <GatsbyImage 
+                        image={getImage(project.imageData)}
+                        alt={project.title}
+                    />
+                </a>
+            ))}
+        </div>
     )
 }

@@ -14,7 +14,7 @@
     grid-template-rows: 1fr;
 }
 
-#home-about h2 {
+#introduction h2 {
     color: #B05A7A;
     font-family: 'Saira Semi Condensed', sans-serif;
     font-weight: 100;
@@ -22,23 +22,97 @@
     text-align: right;
 }
 
-#home-about p {
+#introduction p {
     color: white;
     font-family: sans-serif;
     font-size: 16px;
     text-align: right;
-    margin-bottom: 60px;
     font-family: sans-serif;
+}
+
+#home-about #introduction {
+    display: flex;
+    flex-direction: column;
 }
 
 #home-about #introduction > div {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-grow: 1;
 }
 
 #home-about #introduction svg {
     width: 64px;
     height: 64px;
     color: #B05A7A;
+}
+
+/* GALLERY */
+#project-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gallery-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    place-items: center;
+    gap: 20px;
+}
+
+.gallery-panel {
+    display: block;
+    width: 360px;
+    height: 240px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-panel .shadow-panel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    opacity: 0.9;
+}
+
+.shadow-panel h3 {
+    font-family: 'Saira Semi Condensed', sans-serif;
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.shadow-panel p {
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+#panel0.gallery-panel {
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+
+#panel1.gallery-panel {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+#panel2.gallery-panel {
+    grid-column: 2/3;
+    grid-row: 2/3;
 }
